@@ -1,9 +1,30 @@
-import ProductCard from "./ProductCard";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useProductContext } from '../providers/ProductProvider';
+import ProductCard from './ProductCard';
 
 function HomeFeature() {
+    const [loading, setLoading] = useState(true);
+    const data = useProductContext();
+    const sliceData = data.slice(0, 3);
     return (
-        <ProductCard title = 'test product' price = {3000} src = 'https://scontent.fsgn5-3.fna.fbcdn.net/v/t1.15752-9/316969893_657872435806557_1217283289719410624_n.png?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=f5f8dr3v5wAAX-JxGQb&tn=hqAK--8mZ-PeVB01&_nc_ht=scontent.fsgn5-3.fna&oh=03_AdRpjyhQJClni6Zq2_Zp0f9L6TVl3pRppgagpPkXPT7GLg&oe=63A5B87B'/>
-    )
+        <div className="feature">
+            <h2 className="feature-title mt-12 text-center text-4xl font-bold tracking-[2px] text-[#102A42]">
+                Featured Products
+            </h2>
+            <div className="my-20 product-list grid tablet:grid-cols-3 laptop:grid-cols-3 mobile:grid-cols-1, smallmobile:grid-cols-1">
+                {sliceData.map((product) => {
+                    console.log(product);
+                    return <ProductCard title={product.name} price={product.price} src={product.image} />;
+                })}
+            </div>
+            <Link to="/products" className="flex justify-center items-center">
+                <span className="text-center text-white bg-[#AB7A5F] py-2 px-3 rounded-sm tracking-[1.5px]">
+                    ALL PRODUCTS
+                </span>
+            </Link>
+        </div>
+    );
 }
 
-export default HomeFeature
+export default HomeFeature;

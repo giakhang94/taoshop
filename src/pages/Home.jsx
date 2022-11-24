@@ -1,12 +1,13 @@
-import { HomeFeature, HomeHero } from "../components"
-
+import { HomeContact, HomeFeature, HomeFurniture, HomeHero } from '../components';
 
 function Home() {
     return (
         <div>
-            <HomeHero/>
-            <HomeFeature/>
+            <HomeHero />
+            <HomeFeature />
+            <HomeFurniture />
+            <HomeContact />
         </div>
-    )
+    );
 }
-export default Home
+export default Home;
