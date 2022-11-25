@@ -6,5 +6,6 @@ import ProductCard from './ProductCard';
 import HomeFeature from './HomeFeature';
 import HomeFurniture from './HomeFurniture';
 import HomeContact from './HomeContact';
+import colorClass from './colorClass';
 
-export { Header, Footer, Sidebar, HomeHero, ProductCard, HomeFeature, HomeFurniture, HomeContact };
+export { Header, Footer, Sidebar, HomeHero, ProductCard, HomeFeature, HomeFurniture, HomeContact, colorClass };

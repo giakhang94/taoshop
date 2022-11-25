@@ -41,3 +41,22 @@
     transform: translateX(50%);
     border-radius: 3px;
 }
+/* css cho filter color */
+.color-active {
+    border: solid 2px #ab7b60;
+}
+.color-ff0000 {
+    background-color: #ff0000;
+}
+.color-0000ff {
+    background-color: #0000ff;
+}
+.color-000 {
+    background-color: #000;
+}
+.color-ffb900 {
+    background-color: #ffb900;
+}
+.color-00ff00 {
+    background-color: #00ff00;
+}
