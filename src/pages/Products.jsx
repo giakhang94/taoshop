@@ -7,9 +7,11 @@ import { colorClass, ProductCard } from '../components';
 import { useEffect, useRef, useState } from 'react';
 import { useFilterContext } from '../providers/FilterProvider';
 import { color_list, company_list } from '../constant';
+import Loading from './Spinner';
 
 function Products() {
     const searchRef = useRef();
+    const [loading, setLoading] = useState(true);
     const [inputValue, setInputValue] = useState('');
     const [priceInput, setPriceInput] = useState(550000);
     const [productData, setProductData] = useState([]);
@@ -25,14 +27,17 @@ function Products() {
     const data = useProductContext();
     useEffect(() => {
         setProductData(data);
+        setLoading(false);
     }, [data]);
     useEffect(() => {
         console.log(color);
         dispatch({ type: 'FILTER', category, company, color, price, data: data });
+        setLoading(false);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [category, company, color, price]);
     useEffect(() => {
         setProductData(state);
+        setLoading(false);
     }, [state]);
 
     return (
@@ -182,24 +187,35 @@ function Products() {
                     </div>
                 </div>
                 <div className="right-side flex flex-col justify-center">
-                    <div className="sorter flex mb-10">
-                        <FiGrid /> <FaThList />
-                        <div>
-                            {productData.length}
-                            {productData.length <= 1 ? ' Product' : ' Products'} Found
-                        </div>
-                        <div>Sort By</div>
-                    </div>
-                    <div className="product-list grid laptop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 smallmobile:grid-cols-1">
-                        {productData.length > 0 &&
-                            productData.map((product) => {
-                                return (
-                                    <div className="mb-20" key={product.id}>
-                                        <ProductCard title={product.name} src={product.image} price={product.price} />
-                                    </div>
-                                );
-                            })}
-                    </div>
+                    {loading ? (
+                        <Loading />
+                    ) : (
+                        <>
+                            <div className="sorter flex mb-10">
+                                {/* <FiGrid /> <FaThList /> */}
+                                <div className="mx-6 mt-5 text-lg font-semibold tracking-[1.5px] text-[#324D67]">
+                                    {productData.length}
+                                    {productData.length <= 1 ? ' Product' : ' Products'} Found
+                                </div>
+                                {/* <div>Sort By</div> */}
+                            </div>
+                            <div className="product-list grid laptop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 smallmobile:grid-cols-1">
+                                {productData.length > 0 &&
+                                    productData.map((product) => {
+                                        return (
+                                            <div className="mb-20" key={product.id}>
+                                                <ProductCard
+                                                    title={product.name}
+                                                    src={product.image}
+                                                    price={product.price}
+                                                    id={product.id}
+                                                />
+                                            </div>
+                                        );
+                                    })}
+                            </div>
+                        </>
+                    )}
                 </div>
             </div>
         </div>

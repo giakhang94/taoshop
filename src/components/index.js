@@ -7,5 +7,23 @@ import HomeFeature from './HomeFeature';
 import HomeFurniture from './HomeFurniture';
 import HomeContact from './HomeContact';
 import colorClass from './colorClass';
+import ProductImage from './ProductImage';
+import HeroPage from './HeroPage';
+import Separate from './Seperate';
+import ColorList from './ColorList';
 
-export { Header, Footer, Sidebar, HomeHero, ProductCard, HomeFeature, HomeFurniture, HomeContact, colorClass };
+export {
+    Header,
+    Footer,
+    Sidebar,
+    HomeHero,
+    ProductCard,
+    HomeFeature,
+    HomeFurniture,
+    HomeContact,
+    colorClass,
+    ProductImage,
+    HeroPage,
+    Separate,
+    ColorList,
+};

@@ -60,3 +60,8 @@
 .color-00ff00 {
     background-color: #00ff00;
 }
+
+/* css cho loading */
+.loading {
+    background-color: rgba(0, 0, 0, 0.5);
+}
