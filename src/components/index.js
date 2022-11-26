@@ -11,6 +11,7 @@ import ProductImage from './ProductImage';
 import HeroPage from './HeroPage';
 import Separate from './Seperate';
 import ColorList from './ColorList';
+import FilterProduct from './FilterProduct';
 
 export {
     Header,
@@ -26,4 +27,5 @@ export {
     HeroPage,
     Separate,
     ColorList,
+    FilterProduct,
 };

@@ -72,13 +72,20 @@
     display: block;
 }
 /* sticky filter */
-.filter-sticky {
-    height: 25vh;
-    min-height: 200px;
+@media (min-width: 768px) {
+    .filter-sticky {
+        height: 50vh;
+        min-height: 500px;
 
-    position: -webkit-sticky;
-    position: sticky;
-    top: 5%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 5%;
+    }
+}
+@media (max-width: 767px) {
+    .filter-sticky {
+        height: 100%;
+    }
 }
 /* css cho active filter category */
 .active-category {

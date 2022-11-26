@@ -10,7 +10,7 @@ function Header() {
                     <img src={logo} alt="Tao designer" className="h-full" />
                 </Link>
             </div>
-            <div className="mobile-menu laptop:hidden">
+            <div className="mobile-menu laptop:hidden py-10">
                 <FiMenu className="text-2xl text-[#AB7A5F] font-semibold cursor-pointer" />
                 <ul className=" hidden absolute shadow-sm  shadow-gray-300 top-[100%]  min-w-[120px] w-full pt-1 pb-5 leading-8 px-5 bg-white right-0 laptop:space-x-12 laptop:text-md tablet:space-x-5 tablet:text-sm letter tracking-wide z-[1000] ">
                     <Link to="/">
