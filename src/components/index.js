@@ -12,6 +12,8 @@ import HeroPage from './HeroPage';
 import Separate from './Seperate';
 import ColorList from './ColorList';
 import FilterProduct from './FilterProduct';
+import CheckoutList from './CheckoutList';
+import SubTotal from './subTotal';
 
 export {
     Header,
@@ -28,4 +30,6 @@ export {
     Separate,
     ColorList,
     FilterProduct,
+    CheckoutList,
+    SubTotal,
 };

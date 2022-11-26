@@ -2,7 +2,14 @@ import logo from '../assets/images/logo2.png';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
+import { useCartContext } from '../providers/CartProvider';
 function Header() {
+    let cartCount = 0;
+    const [{ cart }, dispatch] = useCartContext();
+    // eslint-disable-next-line array-callback-return
+    cart.map((item) => {
+        cartCount += item.count;
+    });
     return (
         <div className="header relative flex justify-between items-center laptop:px-20 tablet:px-10 mobile:px-5 smallmobile:px-5 py-2 h-[80px] bg-color-primary shadow-md w-full">
             <div className="header-logo w-auto h-[52px]">
@@ -26,7 +33,7 @@ function Header() {
                     <Link to="/checkout">
                         <span className="relative block mt-5">
                             <FaShoppingCart />
-                            <span className="absolute -top-[100%] left-5">12</span>
+                            <span className="absolute -top-[100%] left-5">{cartCount}</span>
                         </span>
                     </Link>
                     <Link to="/sign-in">
@@ -45,18 +52,18 @@ function Header() {
                     <li className="tracking-[2.5px] cursor-pointer">Products</li>
                 </Link>
             </ul>
-            <div className="user mobile:hidden tablet:hidden smallmobile:hidden laptop:flex items-center space-x-8 mobile:space-x-3 smallmobile:space-x-3 mobile:text-sm smallmobile:text-sm">
+            <div className="user mobile:hidden tablet:hidden smallmobile:hidden tablet:text-md laptop:text-md laptop:flex items-center space-x-8 mobile:space-x-3 smallmobile:space-x-3 mobile:text-sm smallmobile:text-sm">
                 <div className="cart flex items-center space-x-1">
                     <Link to="/checkout">
                         <span className="relative">
                             <FaShoppingCart />
-                            <span className="absolute -top-[100%] -right-3">12</span>
+                            <span className="absolute -top-[100%] -right-3">{cartCount}</span>
                         </span>
                     </Link>
                 </div>
                 <div className="user">
                     <Link to="/sign-in">
-                        <span className="text-md text-[#AB7A5F] font-bold">Login</span>
+                        <span className="text-md ml-5 text-[#AB7A5F] font-bold">Login</span>
                     </Link>
                 </div>
             </div>

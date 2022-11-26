@@ -47,9 +47,10 @@ function FilterProduct({ dispatch, data }) {
                     </div>
                     <ul className="category text-[#97A9BB] mt-2 mb-3">
                         <h3 className="font-bold text-[#102A42] tracking-[1.5px]">Categories</h3>
-                        {categories_list.map((category) => {
+                        {categories_list.map((category, index) => {
                             return (
                                 <li
+                                    key={index + 'category'}
                                     className={`pl-2 mb-1 tracking-[1.5] cursor-pointer capitalize ${
                                         category === filter.category ? 'active-category' : ''
                                     }`}

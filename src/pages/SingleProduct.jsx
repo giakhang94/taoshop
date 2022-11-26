@@ -1,25 +1,32 @@
 import { useEffect, useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
-import { useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ColorList, HeroPage, ProductImage, Separate } from '../components';
 import { Loading } from '../pages';
 import { single_product_url } from '../constant';
 import axios from 'axios';
+import { useCartContext } from '../providers/CartProvider';
 function SingleProduct() {
+    const navigate = useNavigate();
+    const [activeColor, setActiveColor] = useState('');
+    const [cartState, cartDispatch] = useCartContext();
     const [loading, setLoading] = useState(true);
     const [dataProduct, setDataProduct] = useState({});
     const [count, setCount] = useState(1);
     const id = useParams();
     const url = single_product_url + id.id;
-    console.log('url', url);
-    console.log('data', dataProduct);
+    const getActive = (color) => {
+        setActiveColor(color);
+    };
+    // console.log('url', url);
+    // console.log('data', dataProduct);
     useEffect(() => {
         async function fetchSingleProduct() {
             try {
                 const resp = await axios(url, {
                     headers: { 'Access-Control-Allow-Origin': '*', accept: 'application/json' },
                 });
-                console.log(resp);
+                // console.log(resp);
                 setDataProduct(resp.data);
                 setLoading(false);
             } catch (error) {
@@ -67,7 +74,7 @@ function SingleProduct() {
                             <span className="flex-1">{dataProduct.company}</span>
                         </div>
                         <Separate />
-                        <ColorList colors={dataProduct.colors} />
+                        <ColorList colors={dataProduct.colors} getActive={getActive} />
                         <div className="addCart flex flex-col justify-center">
                             <div className="flex items-center justify-center">
                                 <span
@@ -90,9 +97,20 @@ function SingleProduct() {
                                     +
                                 </span>
                             </div>
-                            <button className="text-white font-semibold tracking-[1.5px] py-1 px-2 bg-[#8F654F] rounded-sm">
+
+                            <span
+                                type="button"
+                                onClick={(e) => {
+                                    cartDispatch({
+                                        type: 'ADD_CART',
+                                        data: { product: dataProduct, count: count, color: activeColor },
+                                    });
+                                    navigate('/checkout');
+                                }}
+                                className="text-white text-center cursor-pointer font-semibold tracking-[1.5px] py-1 px-2 bg-[#8F654F] rounded-sm w-full"
+                            >
                                 Add to cart
-                            </button>
+                            </span>
                         </div>
                     </div>
                 </div>

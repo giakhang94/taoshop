@@ -10,8 +10,6 @@ import { categories_list, color_list, company_list } from '../constant';
 import Loading from './Spinner';
 
 function Products() {
-    const [showFilter, setShowFilter] = useState(false);
-    const searchRef = useRef();
     const [loading, setLoading] = useState(true);
 
     const [productData, setProductData] = useState([]);

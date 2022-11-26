@@ -2,6 +2,7 @@
 
 const initProductStates = {
     data: [],
+    cart: [],
 };
 
 const productReducer = (state, action) => {

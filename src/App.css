@@ -92,3 +92,8 @@
     font-weight: 600;
     color: #7d8c9b;
 }
+/* css cho modal */
+.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 24px 5px;
+}
