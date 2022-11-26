@@ -7,10 +7,10 @@ function ProductImage({ image }) {
             <div className="main-img w-auto h-[350px] object-cover shadow-md shadow-gray-500 rounded-md">
                 <img src={image[main].url} className="w-full object-cover h-full rounded-md" alt="" />
             </div>
-            <div className="list-img flex justify-around w-full">
+            <div className="list-img flex justify-center w-full">
                 {image.map((img, index) => {
                     return (
-                        <div className="m-1" key={img.id}>
+                        <div className="m-1 w-full" key={img.id}>
                             <img
                                 src={img.url}
                                 alt=""

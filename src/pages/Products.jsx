@@ -6,7 +6,7 @@ import { useProductContext } from '../providers/ProductProvider';
 import { colorClass, ProductCard } from '../components';
 import { useEffect, useRef, useState } from 'react';
 import { useFilterContext } from '../providers/FilterProvider';
-import { color_list, company_list } from '../constant';
+import { categories_list, color_list, company_list } from '../constant';
 import Loading from './Spinner';
 
 function Products() {
@@ -30,7 +30,7 @@ function Products() {
         setLoading(false);
     }, [data]);
     useEffect(() => {
-        console.log(color);
+        // console.log(color);
         dispatch({ type: 'FILTER', category, company, color, price, data: data });
         setLoading(false);
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,12 +39,12 @@ function Products() {
         setProductData(state);
         setLoading(false);
     }, [state]);
-
+    console.log(filter);
     return (
         <div>
             <HeroPage title={'Products'} />
             <div className="content flex">
-                <div className="left-side filter w-[20%] px-5 py-5 ml-10">
+                <div className="left-side filter-sticky filter min-w-[300px] w-[20%] px-5 py-5 ml-10">
                     <div className="search border border-gray-300 rounded px-1 py-1 mb-3">
                         <input
                             ref={searchRef}
@@ -59,69 +59,21 @@ function Products() {
                     </div>
                     <ul className="category text-[#97A9BB] mt-2 mb-3">
                         <h3 className="font-bold text-[#102A42] tracking-[1.5px]">Categories</h3>
-                        <li
-                            className="pl-2 mb-1 tracking-[1.5px] cursor-pointer"
-                            onClick={(e) => {
-                                setInputValue('');
-                                setFilter((prev) => ({ ...prev, category: 'all' }));
-                            }}
-                        >
-                            All
-                        </li>
-                        <li
-                            className="pl-2 mb-1 tracking-[1.5px] cursor-pointer"
-                            onClick={(e) => {
-                                setInputValue('');
-                                setFilter((prev) => ({ ...prev, category: 'office' }));
-                            }}
-                        >
-                            Office
-                        </li>
-                        <li
-                            className="pl-2 mb-1 tracking-[1.5px] cursor-pointer"
-                            onClick={(e) => {
-                                setInputValue('');
-                                setFilter((prev) => ({ ...prev, category: 'living room' }));
-                            }}
-                        >
-                            Living Room
-                        </li>
-                        <li
-                            className="pl-2 mb-1 tracking-[1.5px] cursor-pointer"
-                            onClick={(e) => {
-                                setInputValue('');
-                                setFilter((prev) => ({ ...prev, category: 'kitchen' }));
-                            }}
-                        >
-                            Kitchen
-                        </li>
-                        <li
-                            className="pl-2 mb-1 tracking-[1.5px] cursor-pointer"
-                            onClick={(e) => {
-                                setInputValue('');
-                                setFilter((prev) => ({ ...prev, category: 'bedroom' }));
-                            }}
-                        >
-                            Bedroom
-                        </li>
-                        <li
-                            className="pl-2 mb-1 tracking-[1.5px] cursor-pointer"
-                            onClick={(e) => {
-                                setInputValue('');
-                                setFilter((prev) => ({ ...prev, category: 'dining' }));
-                            }}
-                        >
-                            Dining
-                        </li>
-                        <li
-                            className="pl-2 mb-1 tracking-[1.5px] cursor-pointer"
-                            onClick={(e) => {
-                                setInputValue('');
-                                setFilter((prev) => ({ ...prev, category: 'kids' }));
-                            }}
-                        >
-                            Kids
-                        </li>
+                        {categories_list.map((category) => {
+                            return (
+                                <li
+                                    className={`pl-2 mb-1 tracking-[1.5] cursor-pointer capitalize ${
+                                        category === filter.category ? 'active-category' : ''
+                                    }`}
+                                    onClick={(e) => {
+                                        setInputValue('');
+                                        setFilter((prev) => ({ ...prev, category: category }));
+                                    }}
+                                >
+                                    {category}
+                                </li>
+                            );
+                        })}
                     </ul>
                     <div className="company mb-3">
                         <h3 className="font-bold text-[#102A42] tracking-[1.5px]">Company</h3>
