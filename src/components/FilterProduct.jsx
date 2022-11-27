@@ -22,7 +22,7 @@ function FilterProduct({ dispatch, data }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [category, company, color, price]);
     return (
-        <div className="left-side filter-sticky filter  Pdesktop:w-[20%] Plaptop:w-[20%] Pmobile:w-full Psmallmobile:w-full Ptablet:w-[30%]  px-5 py-5 ml-5">
+        <div className="left-side filter-sticky filter  Pdesktop:w-[20%] Plaptop:w-[20%] Pmobile:w-[90%] Psmallmobile:w-[90%] Ptablet:w-[30%]  px-5 py-5 mx-auto ">
             <span
                 className="mb-2 bg-[#AB7B60] text-white text-center py-1  block cursor-pointer Plaptop:hidden Pdesktop:hidden tracking-[1.5px] font-semibold text-xl"
                 onClick={() => {
