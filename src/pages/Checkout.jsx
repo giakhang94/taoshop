@@ -21,14 +21,17 @@ function Checkout() {
             })}
             <Separate addClassname="flex items-center mx-auto w-full" />
             <SubTotal />
-            <div className="flex justify-around mx-auto mt-3">
+            <div
+                className="flex laptop:flex-row laptop:justify-around laptop:items-center tablet:flex-row table:justify-around tablet:items-center mobile:flex-col
+            smallmobile:flex-col  mx-auto mt-3"
+            >
                 <Link to="/products">
-                    <span className="bg-[#AB7B60] text-white font-semibold tracking-[1.5px] py-2 px-3 uppercase rounded-sm mx-3">
+                    <span className="min-w:[150px] text-center mb-3 block bg-[#AB7B60] text-white font-semibold tracking-[1.5px] py-2 px-3 uppercase rounded-sm mx-3">
                         Countinue Shopping
                     </span>
                 </Link>
                 <span
-                    className="bg-[#45322D] text-white font-semibold tracking-[1.5px] py-2 px-3 uppercase rounded-sm mx-3 cursor-pointer"
+                    className="min-w:[150px] text-center block bg-[#45322D] text-white font-semibold tracking-[1.5px] py-2 px-3 uppercase rounded-sm mx-3 cursor-pointer"
                     onClick={() => {
                         cartDispatch({ type: 'CLEAR_CART' });
                     }}
