@@ -60,6 +60,9 @@ const cartReducer = (state, action) => {
                 // => Khi đang chạy map, hoặc nằm trên state thì phải clone
             });
             return { ...state, cart: [...removeCart] };
+        case 'CLEAR_CART':
+            let res = [];
+            return { ...state, cart: [...res] };
         default:
             console.log('default');
     }

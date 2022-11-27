@@ -52,12 +52,14 @@ function Header() {
                     <li className="tracking-[2.5px] cursor-pointer">Products</li>
                 </Link>
             </ul>
-            <div className="user mobile:hidden tablet:hidden smallmobile:hidden tablet:text-md laptop:text-md laptop:flex items-center space-x-8 mobile:space-x-3 smallmobile:space-x-3 mobile:text-sm smallmobile:text-sm">
+            <div className="user mobile:hidden tablet:hidden smallmobile:hidden tablet:text-lg laptop:text-lg laptop:flex items-center space-x-8 mobile:space-x-3 smallmobile:space-x-3 mobile:text-sm smallmobile:text-sm">
                 <div className="cart flex items-center space-x-1">
                     <Link to="/checkout">
                         <span className="relative">
                             <FaShoppingCart />
-                            <span className="absolute -top-[100%] -right-3">{cartCount}</span>
+                            <span className="absolute -top-[80%] -right-3 w-5 h-5 text-center text-white bg-[#AB7B60] rounded-[50%] text-sm">
+                                {cartCount < 100 ? cartCount : ':)'}
+                            </span>
                         </span>
                     </Link>
                 </div>

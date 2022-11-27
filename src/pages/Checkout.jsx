@@ -21,11 +21,21 @@ function Checkout() {
             })}
             <Separate addClassname="flex items-center mx-auto w-full" />
             <SubTotal />
-            <Link to="/products">
-                <span className="bg-[#AB7B60] text-white font-semibold tracking-[1.5px] py-2 px-3 uppercase rounded-sm mx-3">
-                    Countinue Shopping
+            <div className="flex justify-around mx-auto mt-3">
+                <Link to="/products">
+                    <span className="bg-[#AB7B60] text-white font-semibold tracking-[1.5px] py-2 px-3 uppercase rounded-sm mx-3">
+                        Countinue Shopping
+                    </span>
+                </Link>
+                <span
+                    className="bg-[#45322D] text-white font-semibold tracking-[1.5px] py-2 px-3 uppercase rounded-sm mx-3 cursor-pointer"
+                    onClick={() => {
+                        cartDispatch({ type: 'CLEAR_CART' });
+                    }}
+                >
+                    CLEAR YOUR CART
                 </span>
-            </Link>
+            </div>
         </div>
     );
 }

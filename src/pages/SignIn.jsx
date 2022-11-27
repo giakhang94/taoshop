@@ -13,7 +13,7 @@ function SignIn() {
                     alt=""
                 />
             </div>
-            <div className=" modal w-full text-center text-3xl modal absolute top-2/4 left-2/4 -translate-x-[50%] -translate-y-[50%] leading-[60px] text-white font-semibold tracking-[2px]">
+            <div className=" modal w-full text-center laptop:text-3xl laptop:leading-[60px] tablet:text-2xl tablet:leading-[30px] mobile:text-md mobile:leading-[20px] smallmobile:text-md smallmobile:leading-[15px]  modal absolute top-2/4 left-2/4 -translate-x-[50%] -translate-y-[50%]  text-white font-semibold tracking-[2px]">
                 <p>Web này dùng để test kiến thức useReducer và useContext</p>
                 <p>Tạo filter lồng nhau, cập nhật giỏ hàng từ API bên ngoài, không kết hợp với B.E</p>
                 <p>Login/Auth có thể dùng Firebase, đã được thể hiện ở các Project khác của tôi</p>

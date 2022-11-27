@@ -68,6 +68,7 @@ function FilterProduct({ dispatch, data }) {
                         <h3 className="font-bold text-[#102A42] tracking-[1.5px]">Company</h3>
                         <select
                             className="shadow-md shadow-gray-300 min-w-[100px] text-sm"
+                            value={company}
                             onChange={(e) => {
                                 setFilter((prev) => ({ ...prev, company: e.target.value }));
                             }}
@@ -126,6 +127,20 @@ function FilterProduct({ dispatch, data }) {
                             />
                         </div>
                     </div>
+                    <span
+                        onClick={() => {
+                            setFilter((prev) => ({
+                                ...prev,
+                                category: 'all',
+                                company: 'all',
+                                color: 'all',
+                                price: 550000,
+                            }));
+                        }}
+                        className="bg-red-500 cursor-pointer text-white font-semibold mt-5 block text-center py-1 px-2 rounded-sm"
+                    >
+                        Clear Filter
+                    </span>
                 </>
             ) : (
                 <></>

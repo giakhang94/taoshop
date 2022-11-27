@@ -14,7 +14,7 @@ import ColorList from './ColorList';
 import FilterProduct from './FilterProduct';
 import CheckoutList from './CheckoutList';
 import SubTotal from './subTotal';
-
+import StarRating from './StarRating';
 export {
     Header,
     Footer,
@@ -32,4 +32,5 @@ export {
     FilterProduct,
     CheckoutList,
     SubTotal,
+    StarRating,
 };

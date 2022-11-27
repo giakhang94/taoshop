@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ColorList, HeroPage, ProductImage, Separate } from '../components';
+import { ColorList, HeroPage, ProductImage, Separate, StarRating } from '../components';
 import { Loading } from '../pages';
 import { single_product_url } from '../constant';
 import axios from 'axios';
@@ -52,6 +52,7 @@ function SingleProduct() {
                         <h1 className="text-3xl font-bold text-[#102A42] tracking-[1.5px] uppercase mb-3">
                             {dataProduct.name}
                         </h1>
+                        <StarRating rating={dataProduct.stars} reviews={dataProduct.reviews} />
 
                         <CurrencyFormat
                             className="text-[#AF7A5F] font-semibold text-2xl mb-3 block"

@@ -6,14 +6,14 @@ export default function CheckoutThumb({ data }) {
     const [state, cartDispatch] = useCartContext();
     return (
         <div className="checkout-item mx-3 flex tablet:flex-row laptop:flex-row mobile:flex-col smallmobile:flex-col items-center mb-6 ">
-            <div className="thumb h-[60px]  tablet:w-[40%] laptop:w-[40%] mobile:w-full smallmobile:w-full rounded-lg min-w-[70px] overflow-hidden">
+            <div className="thumb mr-2 h-[60px]  tablet:w-[40%] laptop:w-[40%] mobile:w-full smallmobile:w-full rounded-lg min-w-[70px] overflow-hidden">
                 <div className="h-full relative">
                     <img src={data.product.images[0].url} className=" rounded-md w-fit object-cover" alt="" />
                     <span
                         onClick={() => {
                             cartDispatch({ type: 'REMOVE_CART', id: data.product.id, color: data.color });
                         }}
-                        className="absolute top-0 right-0 cursor-pointer text-[#AB7B60] text-lg font-semibold"
+                        className="absolute top-0 right-0 cursor-pointer text-red-500 text-lg font-semibold"
                     >
                         <AiFillCloseCircle />
                     </span>
