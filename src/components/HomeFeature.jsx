@@ -13,9 +13,16 @@ function HomeFeature() {
                 Featured Products
             </h2>
             <div className="my-20 product-list grid tablet:grid-cols-3 laptop:grid-cols-3 mobile:grid-cols-1, smallmobile:grid-cols-1">
-                {sliceData.map((product) => {
-                    console.log(product);
-                    return <ProductCard title={product.name} price={product.price} src={product.image} />;
+                {sliceData.map((product, index) => {
+                    // console.log(product);
+                    return (
+                        <ProductCard
+                            key={index + 'homeFeature'}
+                            title={product.name}
+                            price={product.price}
+                            src={product.image}
+                        />
+                    );
                 })}
             </div>
             <Link to="/products" className="flex justify-center items-center">
