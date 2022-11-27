@@ -22,9 +22,9 @@ export default function StarRating({ rating, reviews }) {
     const arrayStar = autoStar(rating);
     return (
         <div className="flex items-center text-yellow-500 text-md space-x-1">
-            {arrayStar.map((Star) => {
+            {arrayStar.map((Star, index) => {
                 return (
-                    <span>
+                    <span key={index + 'stars'}>
                         <Star />
                     </span>
                 );
