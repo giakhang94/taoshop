@@ -41,9 +41,11 @@ function SingleProduct() {
         return (
             <div className="single-product ">
                 <HeroPage title={dataProduct.name} products={true} />
-                <button className="ml-5 mt-5 py-2 px-2 rounded-md bg-[#CAAD9B] text-white text-center font-semibold tracking-[1.5px] uppercase">
-                    Back to products
-                </button>
+                <Link to="/products">
+                    <button className="ml-5 mt-5 py-2 px-2 rounded-md bg-[#CAAD9B] text-white text-center font-semibold tracking-[1.5px] uppercase">
+                        Back to products
+                    </button>
+                </Link>
                 <div className="flex tablet:flex-col mobile:flex-col smallmobile:flex-col laptop:flex-row laptop:items-center">
                     <div className="product-img tablet:w-full mobile:w-full smallmobile:w-full laptop:w-2/4">
                         <ProductImage image={dataProduct.images} />

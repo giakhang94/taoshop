@@ -13,4 +13,4 @@ Web gồm
 
 - Chủ yếu sử dụng useContext kết hợp useReducer.
 
-* Tất cả slider array rating stas, filter, cart, checkout,...đều tự code tay, ít dùng thư viện
+* Tất cả slider, rating stas, filter, cart, checkout,... đều cố gắng ít sử dụng thư viện

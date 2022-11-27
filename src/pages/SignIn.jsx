@@ -18,7 +18,7 @@ function SignIn() {
                 <p>Tạo filter lồng nhau, cập nhật giỏ hàng từ API bên ngoài, không kết hợp với B.E</p>
                 <p>Login/Auth có thể dùng Firebase, đã được thể hiện ở các Project khác của tôi</p>
                 <p>Thành thật xin lỗi vì sự bất tiện này!</p>
-                <p className="text-lg italic">100% code tay</p>
+                <p className="text-lg italic">-Ahihi-</p>
             </div>
         </div>
     );
