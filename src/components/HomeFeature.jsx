@@ -21,6 +21,7 @@ function HomeFeature() {
                             title={product.name}
                             price={product.price}
                             src={product.image}
+                            id={product.id}
                         />
                     );
                 })}
