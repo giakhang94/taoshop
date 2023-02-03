@@ -1,3 +1,5 @@
+import pic1 from '../assets/images/pic1.png'
+import pic2 from '../assets/images/pic2.png'
 function HomeHero() {
     return (
         <div className="flex items-center justify-evenly  laptop:px-20 tablet:px-10 mobile:px-5 smallmobile:px-5 py-5">
@@ -15,12 +17,12 @@ function HomeHero() {
             </div>
             <div className="homehero-imgs laptop:w-[50%] laptop:block tablet:hidden mobile:hidden smallmobile:hidden h-full ml-[20%] relative shadow-lg shadow-gray-500 rounded-lg ">
                 <img
-                    src="https://scontent.fsgn5-13.fna.fbcdn.net/v/t1.15752-9/315530721_707265560825513_6995871161548759775_n.png?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_ohc=rO4llp3-N8IAX-bnp29&_nc_ht=scontent.fsgn5-13.fna&oh=03_AdQlPCcUUa1rTw6HULtjLCPAoKb77jw_yW-iSkQeipkxkw&oe=63CFA883"
+                    src={pic1}
                     className="h-[550px] w-full object-cover rounded-md"
                     alt=""
                 />
                 <img
-                    src="https://scontent.fsgn5-9.fna.fbcdn.net/v/t1.15752-9/315522414_5572353732863933_859207125840597748_n.png?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=stKVMdtpf_gAX8dodfS&_nc_ht=scontent.fsgn5-9.fna&oh=03_AdRksbvYFp9ZZOTvSdSeDumBBvvMXKF6LSo286ifet2dNQ&oe=63CFC21A"
+                    src={pic2}
                     className="w-[45%] h-[25%] min-w-[200px] shadow-md shadow-gray-500 rounded-md absolute bottom-0 -left-[15%]"
                     alt=""
                 />
